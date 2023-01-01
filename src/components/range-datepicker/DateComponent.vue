@@ -19,19 +19,19 @@ export default {
     month: {
       type: Number
     },
-    canNextMonth: {
+    NextMonth: {
       type: Boolean,
       default: true
     },
-    canNextYear: {
+    NextYear: {
       type: Boolean,
       default: true
     },
-    canPrevMonth: {
+    PrevMonth: {
       type: Boolean,
       default: true
     },
-    canPrevYear: {
+    PrevYear: {
       type: Boolean,
       default: true
     },
@@ -169,13 +169,13 @@ export default {
       <div class="head">
         <div class="side">
           <div class="prev-year year"
-               v-if="canPrevYear"
+               v-if="PrevYear"
                @click="prevYear">
             <div class="icon prev"></div>
             <div class="icon prev"></div>
           </div>
           <div class="prev-month month"
-               v-if="canPrevMonth"
+               v-if="PrevMonth"
                @click="prevMonth">
             <div class="icon prev"></div>
           </div>
@@ -185,12 +185,12 @@ export default {
         </div>
         <div class="side">
           <div class="next-month month"
-               v-if="canNextMonth"
+               v-if="NextMonth"
                @click="nextMonth">
             <div class="icon next"></div>
           </div>
           <div class="next-year year"
-               v-if="canNextYear"
+               v-if="NextYear"
                @click="nextYear">
             <div class="icon next"></div>
             <div class="icon next"></div>
@@ -205,7 +205,6 @@ export default {
             {{ item }}
         </span>
       </div>
-
       <div class="days">
         <day
             v-for="item in days"
